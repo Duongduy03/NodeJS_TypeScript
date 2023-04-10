@@ -56,11 +56,11 @@ const UpdateProduct = (props: IPropProduct) => {
 
   const onHandleUpdate = (values: any) => {
     // console.log(values);
-    values.name = values.name.trim();
+    // values.name = values.name.trim();
+    // // values.price = values.price.trim();
     // values.price = values.price.trim();
-    values.price = values.price.trim();
-    values.image = values.image.trim();
-    values.description = values.description.trim();
+    // values.image = values.image.trim();
+    // values.description = values.description.trim();
 
     props.onUpdate(values);
     // navigate("/admin/products");

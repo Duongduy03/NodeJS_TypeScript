@@ -36,7 +36,7 @@ const AdminLayout = (props: IProps) => {
     // e.preventDefault();
     props.onLogOut();
   });
-  if (user) {
+  if (user && user.role == "admin") {
     return (
       <Layout>
         <Sider

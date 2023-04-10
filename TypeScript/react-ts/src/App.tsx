@@ -37,6 +37,7 @@ import { authenticate, isAuthenticate, isCartItem } from "./utils/localStorage";
 import Customer from "./pages/customers/Customer";
 import ViewCart from "./pages/cart/ViewCart";
 import Bill from "./pages/cart/Bill";
+import Category from "./admin/category/Category";
 // import { useParams } from "react-router-dom";/
 function App() {
   const navigate = useNavigate();
@@ -216,6 +217,20 @@ function App() {
                   onRemove={onHandleRemoveCate}
                 />
               }
+            />
+
+            <Route
+              element={
+                <CategoryManagement
+                  categories={categories}
+                  onRemove={onHandleRemoveCate}
+                />
+              }
+            />
+
+            <Route
+              path=":id"
+              element={<Category onRemove={onHandleRemove} />}
             />
             <Route
               path="add"

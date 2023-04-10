@@ -16,7 +16,7 @@ const AddCategory = (props: IPropProduct) => {
 
   const onHandleAdd = (values: any) => {
     // console.log(values);
-    values.name = values.name.trim();
+    // values.name = values.name.trim();
 
     props.onAdd(values);
   };

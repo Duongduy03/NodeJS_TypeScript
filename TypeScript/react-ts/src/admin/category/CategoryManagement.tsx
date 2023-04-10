@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ICategory, IProduct } from "../../interface/Interface";
+import Category from "./Category";
+import { getCategoryId } from "../../api/category";
 interface IPropProduct {
   categories: ICategory[];
   onRemove: (id: number | string) => void;
 }
+
 const CategoryManagement = (props: IPropProduct) => {
   // console.log(props);
+
   const [data, setData] = useState<ICategory[]>([]);
   useEffect(() => {
     // console.log(props.products);
     setData(props.categories);
   }, [props]);
+  // console.log(data);
 
   const removeCategory = (id: number | string) => {
     props.onRemove(id);
   };
+
   // console.log(data);
   return (
     <div>
@@ -37,7 +43,9 @@ const CategoryManagement = (props: IPropProduct) => {
             return (
               <tr key={category._id}>
                 <td>{index + 1}</td>
-                <td>{category.name}</td>
+                <td>
+                  <Link to={`${category._id}`}>{category.name}</Link>
+                </td>
 
                 <td>
                   <button

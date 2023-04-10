@@ -42,7 +42,7 @@ const UpdateCategory = (props: IPropProduct) => {
 
   const onHandleUpdate = (values: ICategory) => {
     // console.log(values);
-    values.name = values.name.trim();
+   
     props.onUpdate(values);
     // navigate("/admin/products");
   };

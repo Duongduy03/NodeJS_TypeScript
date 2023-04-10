@@ -19,7 +19,7 @@ export const getAllProducts = async (req, res) => {
   const {
     _sort = "createAt",
     _order = "_asc",
-    _limit = 20,
+    _limit = 30,
     _page = 1,
     _keywords,
   } = req.query;

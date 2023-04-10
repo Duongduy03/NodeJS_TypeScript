@@ -16,10 +16,10 @@ const AddProduct = (props: IPropProduct) => {
   // const { register, handleSubmit } = useForm<IProduct>();
 
   const onHandleAdd = (values: any) => {
-    values.name = values.name.trim();
-    values.price = values.price.trim();
-    values.image = values.image.trim();
-    values.description = values.description.trim();
+    // values.name = values.name.trim();
+    // values.price = values.price.trim();
+    // values.image = values.image.trim();
+    // values.description = values.description.trim();
 
     props.onAdd(values);
   };
@@ -52,7 +52,7 @@ const AddProduct = (props: IPropProduct) => {
           name="price"
           rules={[
             { required: true, message: "Bạn chưa nhập giá!" },
-            { type: "number", message: "Giá bạn nhập phải là số" },
+            { pattern: /^(?:\d*)$/, message: "Giá bạn nhập phải là số" },
           ]}
         >
           <Input type="number" />
